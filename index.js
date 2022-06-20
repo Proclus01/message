@@ -19,9 +19,14 @@ document.querySelector('form').addEventListener('submit',
 
         // Set secondary input field to encrypted value
         // and generate URL string
-        document.querySelector('#link-input').value = 
-        `${window.location}#${encrypted}`; 
-        // window.location gets current URL inside of template literal
+        const linkInput = document.querySelector('#link-input');
+        
+        // window.location gets current URL when inside of template literal
+        linkInput.value = `${window.location}#${encrypted}`; 
+
+        // Select the input inside of the input field
+        linkInput.select();
+        
     }
 );
 
