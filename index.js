@@ -18,7 +18,10 @@ document.querySelector('form').addEventListener('submit',
         const encrypted = btoa(input.value);
 
         // Set secondary input field to encrypted value
-        document.querySelector('#link-input').value = encrypted;
+        // and generate URL string
+        document.querySelector('#link-input').value = 
+        `${window.location}#${encrypted}`; 
+        // window.location gets current URL inside of template literal
     }
 );
 
