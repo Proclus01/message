@@ -11,6 +11,11 @@ document.querySelector('form').addEventListener('submit',
         // Stop Reloading of Page on Form Submission
         event.preventDefault();
 
+        // Hide the user input
+        document.querySelector('#message-form').classList.add('hide');
+        // Reveal the new input element
+        document.querySelector('#link-form').classList.remove('hide');
+
         // Capture user input value
         const input = document.querySelector('#message-input');
 
