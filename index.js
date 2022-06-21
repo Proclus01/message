@@ -1,5 +1,19 @@
 //jshint esversion:9
 
+// Decoding Secret Messages from URL
+
+// generate a URL string, then add URL string to Address bar
+// refresh the page to see the console.log message from decoded hash
+
+// check the current URL
+// see if there is an encoded message
+//      window.location.hash will give us our hash info! 
+const { hash } = window.location;
+
+// decode the message
+// display the message
+console.log(atob(hash.replace('#', '')));
+
 // Event Handler for Form Submission
 
 // Takes user input
