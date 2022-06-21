@@ -8,7 +8,7 @@
 //      and URL address is generated with base64 hash
 //      user can take the URL and enter it into an input
 //      to convert the hash inside of the URL into a string
-//      and read the displayed string
+//      and read the displayed string.
 //
 // ****************************************************************
 
