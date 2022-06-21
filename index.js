@@ -1,13 +1,14 @@
 //jshint esversion:9
 
 // ****************************************************************
-// 0. APP DESCR:
+//      0. APP DESCR:
 // 
-// Message-sharing app where user enters string, 
-// string is converted to base64 and URL address is generated with base64 hash
-// user can take the URL and enter it into an input
-// to convert the hash inside of the URL into a string
-// and read the displayed string
+//      Message-sharing app where user enters string, 
+//      string is converted to base64 
+//      and URL address is generated with base64 hash
+//      user can take the URL and enter it into an input
+//      to convert the hash inside of the URL into a string
+//      and read the displayed string
 //
 // ****************************************************************
 
@@ -18,14 +19,24 @@
 // generate a URL string, then add URL string to Address bar
 // refresh the page to see the console.log message from decoded hash
 
-// check the current URL
-// see if there is an encoded message
-//      window.location.hash will give us our hash info! 
+// check the current URL to see if there is an encoded message
+// window.location.hash will identify a single valid hash in the URL string 
 const { hash } = window.location;
 
-// decode the message
-// display the message
-console.log(atob(hash.replace('#', '')));
+// Decode and store the message
+const message = atob(hash.replace('#', ''));
+
+// Display the message
+if (message) {
+    // Hide the primary UI
+    document.querySelector('#message-form').classList.add('hide');
+
+    // Reveal the hidden panel with the decoded message
+    document.querySelector('#message-show').classList.remove('hide');
+
+    // Insert Message into H1 inside of panel
+    document.querySelector('h1').innerHTML = message;
+}
 
 // ****************************************************************
 // 2. Event Handler for Form Submission
